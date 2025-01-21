@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <h1>Dashboard</h1>
+        </div>
+        <div class="nav-right">
+            <a href="profile.html" class="nav-link">Profile</a>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Welcome</h2>
+            <p>Pagi hari minum teh hangat</p>
+            <p>Minum teh dicampur madu</p>
+            <p> ketek bau menyengat</p>
+            <p>Aku tetap setia di sampingmu.</p>
+    </div>
+
+    <script>
+        // Toggle Sidebar
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+        });
+
+        // Toggle Submenu
+        const submenuToggle = document.querySelectorAll('.submenu-toggle');
+
+        submenuToggle.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const parentLi = this.parentElement;
+                parentLi.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
